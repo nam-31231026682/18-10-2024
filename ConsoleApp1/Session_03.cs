@@ -19,7 +19,7 @@ namespace ConsoleApp1
             float c = float.Parse(Console.ReadLine());
             float k = c + 273;
             float f = c * 18 / 10 + 32;
-            Console.WriteLine("{0} do C = {1} do K = {2} do f", c,k,f);
+            Console.WriteLine("{0} do C = {1} do K = {2} do f", c, k, f);
             Console.ReadKey();
         }
 
@@ -28,8 +28,8 @@ namespace ConsoleApp1
             Console.Write("Input radius: ");
             float r = float.Parse(Console.ReadLine());
             double s = 4 * 3.1406 * r;
-            double f = 4/3 * 3.1406 * r;
-            Console.WriteLine("Hinh cau co ban kinh {0} co surface la {1} co volume la {2} ", r,s,f);
+            double f = 4 / 3 * 3.1406 * r;
+            Console.WriteLine("Hinh cau co ban kinh {0} co surface la {1} co volume la {2} ", r, s, f);
             Console.ReadKey();
         }
 
