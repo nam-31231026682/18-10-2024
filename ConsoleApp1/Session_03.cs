@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     internal class Session_03
     {
-        public static void Main()
+        public static void Man()
         {
             Question_03();
         }
