@@ -10,10 +10,11 @@ namespace ConsoleApp1
 {
     internal class Session_04
     {
-        static void Main(string[] args) 
+        static void Main1(string[] args)
         {
-            Question_05();
+            Question_12();
         }
+
 
         static void Question_01()
         {
@@ -24,7 +25,7 @@ namespace ConsoleApp1
             int div = a / b;
             int chiaDu = a % b;
             Console.WriteLine("a = 12, b = 5");
-            Console.WriteLine("{0} + {1} = {2}",a,b,sum);
+            Console.WriteLine("{0} + {1} = {2}", a, b, sum);
             Console.WriteLine("{0} - {1} = {2}", a, b, diff);
             Console.WriteLine("{0} * {1} = {2}", a, b, multi);
             Console.WriteLine("{0} / {1} = {2}", a, b, div);
@@ -38,10 +39,10 @@ namespace ConsoleApp1
             float x = y * y + 2 * y + 1;
             if ((y > 5) || (y < -5))
                 Console.WriteLine("y must belongs to [-5;5]");
-            else 
-                Console.WriteLine("The result with y = {0} is {1}", y,x);
-            
-            
+            else
+                Console.WriteLine("The result with y = {0} is {1}", y, x);
+
+
         }
 
         static void Question_03()
@@ -57,7 +58,7 @@ namespace ConsoleApp1
             float quydoi = hour + min / 60 + sec / 3600;
             float speed = dis / quydoi;
             float milesHour = speed / 1.609f;
-            Console.WriteLine("Speed is {0}km/h and {1} miles/h",speed,milesHour);
+            Console.WriteLine("Speed is {0}km/h and {1} miles/h", speed, milesHour);
 
         }
 
@@ -73,12 +74,15 @@ namespace ConsoleApp1
 
         static void Question_05()
         {
-            string a = "Hoang Nam  iu nguoi khac roi";
-            if (a = "Hoang Nam  iu nguoi khac roi")
-                Console.WriteLine("CHUAN VAI LON");
-
-
-
+            Console.Write("Input a character: ");
+            char a = char.Parse(Console.ReadLine());
+            if (a == 'u' || a == 'e' || a == 'o' || a == 'a' || a == 'i')
+                Console.WriteLine("That is a vowel");
+            else if (a <= '9' && a >= '0')
+                Console.WriteLine("This is a number");
+            else 
+                Console.WriteLine("This is a symbol");
+            Console.ReadKey();
 
         }
         // Write a C# Sharp program to check whether a given number is even or odd.
@@ -160,17 +164,64 @@ namespace ConsoleApp1
 
         }
 
+    
+        
         // Write a program to read 10 numbers and find their average and sum.
+        
         static void Question_10()
         {
-            int i = 1;
-            do
+            int sum = 0;
+            Console.WriteLine("Input the 10 numbers: ");
+            
+            for (int i = 1; i <= 10; i++)
             {
-                Console.Write(in);
-                i++;
+                Console.Write($"Number {i}: ");
+                int n = int.Parse(Console.ReadLine());
+                sum += n;
             }
-            while (i > 10) { }
+            float avg = (float)sum / 10;
+            Console.WriteLine($"Sum of 10 input numbers: {sum}");
+            Console.ReadKey();
         }
-        
+
+        // Write a program to display the n terms of harmonic series and their sum. 1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/n terms
+
+
+
+        static void Question_11()
+        {
+            Console.Write("Enter the number of terms (n) for the harmonic series: ");
+            int n = int.Parse(Console.ReadLine());
+            float sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                float harmonic = 1f / i;
+                Console.WriteLine($"1/{i}");
+                sum += harmonic;
+            }
+            Console.WriteLine($"Sum of the harmonic: {sum}");
+            Console.ReadKey();
+        }
+
+        static void Question_12()
+        {
+            //Console.Write("Enter min: ");
+            //int min = int.Parse(Console.ReadLine());
+            //Console.Write("Enter max: ");
+            //int max = int.Parse(Console.ReadLine());
+            
+            
+            
+            //double x = 2;
+            //double z = n;
+            //double y = n - 1;
+            //double result1 = Math.Pow(x, y);
+            //double result2 = Math.Pow(x, z);
+            //double b = result1 * (result2 - 1);
+            //Console.WriteLine($"{b}");
+
+            //Console.ReadKey();
+        }
     }
 }
+    
