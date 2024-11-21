@@ -3,59 +3,77 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace ConsoleApp1
 {
     internal class Session_06
     {
-        static void Main(string[] args)
+        static void Main1()
         {
-            Console.Write("Nhap so phan tu mang: ");
-            int n = int.Parse(Console.ReadLine());
-            int[] a = new int[n];
+            int[] array = { 29, 82, 54, 66, 23, 44, 78, 11, 33 };
+            //BubbleSort(array);
+            SelectionSort(array);
+            Console.WriteLine(string.Join(", ", array));
 
-            //NhapMangBangCom(a);
-            InMang(a);
-            InMangNgauNhien(a);
-            IncreaseItems(a, 10);
-            InMang(a);
         }
-        
-        static void NhapMangBangCom(int[]a)
-        {
 
-            for (int i = 0; i < a.Length; i++)
+
+        static void BubbleSort(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                Console.Write($"Nhap phan tu thu #{i}: ");
-                a[i] = int.Parse(Console.ReadLine());
+                for (int j = 0; j < array.Length - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
             }
         }
 
-        static void InMangNgauNhien(int[] a)
+        //static void SelectionSort(int[] array)
+        //{
+        //    //tìm nhỏ nhất trong chuỗi rồi đẩy lên ngoài cùng bên trái
+        //    int n = array.Length;
+        //    for (int i = 0; i < n - 1; i++)
+        //    {
+        //        int index = i;
+        //        int min = array[i];
+        //        for (int j = i + 1; j < n; j++)
+        //        {
+        //            if (array[j] < array[index])
+        //            {
+        //                index = j;
+        //                min = array[j];
+        //            }
+        //        }
+        //        int temp = array[index];
+        //        array[index] = array[i];
+        //        array[i] = temp;
+        //    }
+        //}
+
+
+        static void SelectionSort(int[] array)
         {
-            Random random = new Random();
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                a[i] = random.Next(100);  
+                int min = array[i];
+                for (int j = i + 1; j < i; j++)
+                {
+                    if (array[j] < array[i])
+                    {
+                        min = array[j];
+                    }
+
+                }
             }
-
-
-            static void InMang(int[]a)
-        {
-            Console.WriteLine("Array contents: ");
-            foreach (int item in a)
-            {
-            Console.Write($"{item}, "); 
-            }
-              Console.WriteLine();
-        }
-
-        static void IncreaseItems(int[]a, int val)
-        { 
-            for (int i = 0; i < a.Length; i++)
-                a[i] += val;
         }
     }
-
-
 }
+
+        
